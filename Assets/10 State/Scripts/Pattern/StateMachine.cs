@@ -17,7 +17,7 @@ namespace DesignPatterns.State
         public IdleState idleState;
 
         // event to notify other objects of the state change
-        public event Action<IState> stateChanged;
+        public event Action<IState> StateChanged;
 
         // pass in necessary parameters into constructor 
         public StateMachine(PlayerController player)
@@ -35,7 +35,7 @@ namespace DesignPatterns.State
             state.Enter();
 
             // notify other objects that state has changed
-            stateChanged?.Invoke(state);
+            StateChanged?.Invoke(state);
         }
 
         // exit this state and enter another
@@ -46,7 +46,7 @@ namespace DesignPatterns.State
             nextState.Enter();
 
             // notify other objects that state has changed
-            stateChanged?.Invoke(nextState);
+            StateChanged?.Invoke(nextState);
         }
 
         // allow the StateMachine to update this state

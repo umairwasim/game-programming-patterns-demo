@@ -52,15 +52,21 @@ namespace DesignPatterns.MVP
             health?.Restore();
         }
 
+        // listen for model changes and update the view
+        public void OnHealthChanged()
+        {
+            UpdateView();
+        }
+
         public void UpdateView()
         {
             if (health == null)
                 return;
 
             // format the data for view
-            if (healthSlider !=null && health.MaxHealth != 0)
+            if (healthSlider != null && health.MaxHealth != 0)
             {
-                healthSlider.value = (float) health.CurrentHealth / (float)health.MaxHealth;
+                healthSlider.value = (float)health.CurrentHealth / (float)health.MaxHealth;
             }
 
             if (healthText != null)
@@ -69,10 +75,5 @@ namespace DesignPatterns.MVP
             }
         }
 
-        // listen for model changes and update the view
-        public void OnHealthChanged()
-        {
-            UpdateView();
-        }
     }
 }

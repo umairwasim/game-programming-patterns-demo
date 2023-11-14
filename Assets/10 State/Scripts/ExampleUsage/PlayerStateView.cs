@@ -26,13 +26,13 @@ namespace DesignPatterns.State
             playerStateMachine = player.PlayerStateMachine;
 
             // listen for any state changes
-            playerStateMachine.stateChanged += OnStateChanged;
+            playerStateMachine.StateChanged += OnStateChanged;
         }
 
         void OnDestroy()
         {
             // unregister the subscription if we destroy the object
-            playerStateMachine.stateChanged -= OnStateChanged;
+            playerStateMachine.StateChanged -= OnStateChanged;
         }
 
         // change the UI.Text when the state changes

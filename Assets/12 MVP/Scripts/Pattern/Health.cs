@@ -45,7 +45,7 @@ namespace DesignPatterns.MVP
         // invokes the event
         public void UpdateHealth()
         {
-            HealthChanged.Invoke();
+            HealthChanged?.Invoke();
         }
     }
 }

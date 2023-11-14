@@ -33,7 +33,7 @@ namespace DesignPatterns.Command
                 return;
             }
 
-            GameObject newPathObject = Object.Instantiate(pathPointPrefab, position + offset, Quaternion.identity) as GameObject;
+            GameObject newPathObject = Instantiate(pathPointPrefab, position + offset, Quaternion.identity) as GameObject;
 
             pathObjects?.Push(newPathObject);
 

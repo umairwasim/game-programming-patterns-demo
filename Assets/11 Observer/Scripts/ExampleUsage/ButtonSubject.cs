@@ -10,7 +10,7 @@ namespace DesignPatterns.Observer
     {
         public event Action Clicked;
 
-        private Collider collider;
+        private new Collider collider;
 
         void Start()
         {
